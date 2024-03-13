@@ -1,10 +1,10 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 
-local gui = Library:create{
+local GUI = Library:create{
     Theme = Library.Themes.Serika
 }
 
-local tab = gui:tab{
+local tab = GUI:tab{
     Icon = "rbxassetid://6034996695",
     Name = "Aimbot"
 }
@@ -29,10 +29,10 @@ tab:button({
                                     Text = "sus",
                                     Buttons = {
                                         balls = function()
-                                            gui:set_status("github")
+                                            GUI:set_status("github")
                                         end,
                                         anal = function()
-                                            gui:set_Status("money")
+                                            GUI:set_Status("money")
                                         end
                                     }
                                 }
@@ -45,7 +45,7 @@ tab:button({
     end,
 })
 tab:keybind({Callback = function()
-    gui:prompt()
+    GUI:prompt()
 end,})
 tab:dropdown({
     Name = "Dropdown",
@@ -57,29 +57,16 @@ tab:dropdown({
         "Random"
     }
 })
-tab:dropdown({
-    Name = "yes",
-    StartingText = "Number",
-    Items = {
-        {"One", 1},
-        {"Two", 2},
-        {"Three", 3}
-    },
-    Description = "amongu s",
-    Callback = function(v)
-        print(v, "clicked")
-    end,
-})
 local cum = tab:slider({Callback = function(v)
-    gui:set_status(v)
+    GUI:set_status(v)
 end})
 
 tab:textbox({Callback = function(v)
-    gui:prompt{Text = v}
+    GUI:prompt{Text = v}
 end,})
 
 tab:color_picker({
-    Name = "your mom's color",
+    Name = "Color Of the Hub",
     Style = Library.ColorPickerStyles.Legacy,
     Description = "Click to adjust color...",
     Callback = function(color)
